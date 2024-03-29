@@ -10,17 +10,28 @@ import logging
 import os
 import xml.etree.ElementTree as ET
 
-from . import (check_allowed_versions, check_artwork, check_dependencies,
-               check_entrypoint, check_files, check_addon_branches,
-               check_py3_compatibility, check_string, check_url, common,
-               handle_files, schema_validation, ValidKodiVersions)
+from . import (
+    ValidKodiVersions,
+    check_addon_branches,
+    check_allowed_versions,
+    check_artwork,
+    check_dependencies,
+    check_entrypoint,
+    check_files,
+    check_py3_compatibility,
+    check_string,
+    check_url,
+    common,
+    handle_files,
+    schema_validation,
+)
 from .addons.Addon import Addon
 from .addons.Repository import Repository
-from .versions import KodiVersion
 from .record import INFORMATION, PROBLEM, Record
 from .report import Report
+from .versions import KodiVersion
 
-ROOT_URL = "http://mirrors.kodi.tv/addons/{branch}/addons.xml.gz"
+ROOT_URL = "https://mirrors.kodi.tv/addons/{branch}/addons.xml.gz"
 LOGGER = logging.getLogger(__name__)
 
 
